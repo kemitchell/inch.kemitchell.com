@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+cat >index.html <<HTML
+<!doctype html>
+<html lang=en-US>
+  <head>
+    <meta charset=UTF-8>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>Fractional Inch</title>
+    <link rel=stylesheet href=https://css.kemitchell.com/readable.css>
+  </head>
+  <body>
+$(npx kemarkdown < table.md)
+  </body>
+</html>
+HTML
