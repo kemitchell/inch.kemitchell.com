@@ -10,7 +10,9 @@ cat >index.html <<HTML
     <link rel=stylesheet href=https://css.kemitchell.com/readable.css>
   </head>
   <body>
+  <main>
 $(npx kemarkdown < table.md)
+  </main>
   </body>
 </html>
 HTML
