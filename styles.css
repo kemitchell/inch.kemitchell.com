@@ -1,4 +1,5 @@
 table {
+  max-width: 100%;
   margin: 0 auto;
   border-spacing: 0;
   td, th {
