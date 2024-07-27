@@ -11,6 +11,11 @@ cat >index.html <<HTML
     <style>
 table {
   border-spacing: 0;
+  thead {
+    th {
+      vertical-align: bottom;
+    }
+  }
   tbody {
     td {
       vertical-align: middle;
