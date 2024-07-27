@@ -8,6 +8,14 @@ cat >index.html <<HTML
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>Fractional Inch</title>
     <link rel=stylesheet href=https://css.kemitchell.com/readable.css>
+    <style>
+table {
+  border-spacing: 0;
+  tr:nth-child(even) {
+    background: #eee;
+  }
+}
+    </style>
   </head>
   <body>
   <main>
