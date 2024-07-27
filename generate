@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-fractions = [2, 4, 8, 16, 32]
+fractions = [2, 4, 5, 8, 10, 16, 32]
 
 records = []
 
