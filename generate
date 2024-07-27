@@ -19,6 +19,12 @@ fractions.each do |denominator|
   end
 end
 
+(1..25).each do |mm|
+  record = { mm: }
+  record[:decimal] = mm.to_f / 25.4
+  records << record
+end
+
 rows = records
        .group_by { |x| x[:mm] }
        .map do |_, matching|
