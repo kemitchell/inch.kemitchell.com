@@ -21,6 +21,11 @@ table {
       vertical-align: middle;
       padding: 0.5rem;
     }
+    @media pring {
+      tr {
+        border-bottom: 1px solid black;
+      }
+    }
     @media screen {
       tr:nth-child(even) {
         background: #eee;
