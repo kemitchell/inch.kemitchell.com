@@ -1,0 +1,53 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+fractions = [2, 4, 8, 16, 32]
+
+records = []
+
+def inch_to_mm(inch)
+  inch * 25.4
+end
+
+fractions.each do |denominator|
+  (1..denominator).each do |numerator|
+    record = {}
+    record[denominator] = "#{numerator}/#{denominator}"
+    record[:decimal] = numerator.to_f / denominator
+    record[:mm] = inch_to_mm(numerator.to_f / denominator)
+    records << record
+  end
+end
+
+rows = records
+       .group_by { |x| x[:mm] }
+       .map do |_, matching|
+         row = {}
+         matching.each do |record|
+           record.each do |key, value|
+             row[key] = value
+           end
+         end
+         row
+       end
+       .sort_by { |row| row[:mm] }
+
+print "|"
+fractions.each do |denominator|
+  print " /#{denominator} |"
+end
+print ' Decimal |'
+print ' Millimeters |'
+puts
+
+puts "|#{'-|' * (fractions.count + 2)}"
+
+rows.each do |row|
+  print '| '
+  fractions.each do |denominator|
+    print " #{row[denominator]} |"
+  end
+  print " #{row[:decimal]} |"
+  print " #{row[:mm]} |"
+  puts
+end
