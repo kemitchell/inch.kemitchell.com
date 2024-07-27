@@ -3,4 +3,4 @@ set -e
 
 DOMAIN=inch.kemitchell.com
 ./build
-scp index.html "$DOMAIN:/var/www/$DOMAIN"
+scp index.html styles.css "$DOMAIN:/var/www/$DOMAIN"

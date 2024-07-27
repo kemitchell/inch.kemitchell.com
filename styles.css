@@ -1,0 +1,36 @@
+table {
+  margin: 0 auto;
+  border-spacing: 0;
+  td, th {
+    padding: 0.5rem;
+  }
+  thead {
+    th {
+      text-align: left;
+      vertical-align: bottom;
+    }
+    tr:last-child {
+      td, th {
+        border-bottom: 1px solid black;
+      }
+    }
+  }
+  tbody {
+    td {
+      vertical-align: middle;
+      padding: 0.5rem;
+    }
+    @media print {
+      tr {
+        td, th {
+          border-bottom: 1px solid #777;
+        }
+      }
+    }
+    @media screen {
+      tr:nth-child(even) {
+        background: #eee;
+      }
+    }
+  }
+}
