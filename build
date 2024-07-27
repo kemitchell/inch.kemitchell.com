@@ -14,7 +14,7 @@ table {
   tbody {
     td {
       vertical-align: middle;
-      padding: 0.rem;
+      padding: 0.5rem;
     }
     tr:nth-child(even) {
       background: #eee;
