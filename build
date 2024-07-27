@@ -16,8 +16,10 @@ table {
       vertical-align: middle;
       padding: 0.5rem;
     }
-    tr:nth-child(even) {
-      background: #eee;
+    @media(screen) {
+      tr:nth-child(even) {
+        background: #eee;
+      }
     }
   }
 }
