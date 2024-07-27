@@ -11,8 +11,14 @@ cat >index.html <<HTML
     <style>
 table {
   border-spacing: 0;
-  tr:nth-child(even) {
-    background: #eee;
+  tbody {
+    td {
+      vertical-align: middle;
+      padding: 0.rem;
+    }
+    tr:nth-child(even) {
+      background: #eee;
+    }
   }
 }
     </style>
