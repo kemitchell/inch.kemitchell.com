@@ -41,9 +41,9 @@ rows = records
 puts '<table>'
 
 puts '<thead>'
-print '<tr>'
+puts '<tr>'
 fractions.each do |denominator|
-  print "<th>/#{denominator}</th>"
+  puts "<th>/#{denominator}</th>"
 end
 puts '<th>Decimal</th>'
 puts '<th>Millimeters</th>'
