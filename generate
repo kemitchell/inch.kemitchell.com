@@ -58,7 +58,7 @@ rows.each do |row|
     if value.nil?
       print '<td>'
     else
-      print "<td id='#{value.sub('/', '_')}'>"
+      print "<td id='#{value.sub('/', '/')}'>"
     end
     print value
     puts '</td>'
