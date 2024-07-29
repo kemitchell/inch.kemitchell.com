@@ -27,4 +27,5 @@ tidy \
   -indent \
   -modify \
   -wrap 0 \
+  -quiet \
   ./index.html
