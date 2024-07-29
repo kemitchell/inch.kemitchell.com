@@ -26,7 +26,7 @@ table {
     @media print {
       tr {
         td, th {
-          border-bottom: 1px dotted black;
+          border-bottom: 1px dashed black;
         }
       }
     }
