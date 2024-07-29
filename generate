@@ -54,7 +54,11 @@ puts '<tbody>'
 rows.each do |row|
   puts '<tr>'
   fractions.each do |denominator|
-    puts "<td>#{row[denominator]}</td>"
+    puts '<td>'
+    value = row[denominator]
+    puts "<a id='#{value}_#{denominator}'></a>" unless value.nil?
+    puts value
+    puts '</td>'
   end
   puts "<td>#{row[:decimal]}</td>"
   puts "<td>#{row[:mm]}</td>"
