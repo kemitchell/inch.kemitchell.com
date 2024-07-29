@@ -66,7 +66,7 @@ rows.each do |row|
   puts "<td>#{row[:decimal]}</td>"
   mm = row[:mm]
   if (mm % 1).zero?
-    print "<td id='#{mm}_mm'>"
+    print "<td id='#{mm}mm'>"
   else
     print '<td>'
   end
