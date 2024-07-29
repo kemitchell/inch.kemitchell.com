@@ -9,9 +9,6 @@ table {
   td, th {
     padding: 0.5rem;
   }
-  tr:has(td:target) {
-    background: rgba(256, 250, 0, 0.25);
-  }
   thead {
     border-bottom: 1px solid black;
     th {
@@ -32,6 +29,9 @@ table {
       }
     }
     @media screen {
+      tr:has(td:target) {
+        background: rgba(256, 250, 0, 0.25);
+      }
       tr:nth-child(even) {
         background: #eee;
       }
