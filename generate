@@ -56,15 +56,21 @@ rows.each do |row|
   fractions.each do |denominator|
     value = row[denominator]
     if value.nil?
-      puts '<td>'
+      print '<td>'
     else
-      puts "<td id='#{value.sub('/', '_')}'>"
+      print "<td id='#{value.sub('/', '_')}'>"
     end
-    puts value
+    print value
     puts '</td>'
   end
   puts "<td>#{row[:decimal]}</td>"
-  puts "<td>#{row[:mm]}</td>"
+  mm = row[:mm]
+  if (mm % 1).zero?
+    print "<td id='#{mm}_mm'>"
+  else
+    print '<td>'
+  end
+  puts "#{row[:mm]}</td>"
   puts '</tr>'
 end
 puts '</tbody>'
