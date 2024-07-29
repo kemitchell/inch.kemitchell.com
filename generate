@@ -56,7 +56,7 @@ rows.each do |row|
   fractions.each do |denominator|
     puts '<td>'
     value = row[denominator]
-    puts "<a id='#{value}_#{denominator}'></a>" unless value.nil?
+    puts "<a id='#{value.sub('/', '_')}'></a>" unless value.nil?
     puts value
     puts '</td>'
   end
