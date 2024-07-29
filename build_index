@@ -19,7 +19,7 @@ The scripts for generating this site are at: https://github.com/kemitchell/inch.
   </head>
   <body>
   <main>
-$(./generate)
+$(./output_table)
   </main>
   </body>
 </html>
