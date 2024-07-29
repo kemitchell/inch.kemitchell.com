@@ -54,12 +54,12 @@ puts '<tbody>'
 rows.each do |row|
   puts '<tr>'
   fractions.each do |denominator|
+    value = row[denominator]
     if value.nil?
       puts '<td>'
     else
       puts "<td id='#{value.sub('/', '_')}'>"
     end
-    value = row[denominator]
     puts value
     puts '</td>'
   end
