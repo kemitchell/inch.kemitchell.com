@@ -1,5 +1,7 @@
 #!/bin/sh
 set -e
+set -x
+
 cat >index.html <<HTML
 <!doctype html>
 <html lang=en-US>
@@ -16,3 +18,13 @@ $(npx kemarkdown < table.md)
   </body>
 </html>
 HTML
+
+tidy \
+  --custom-tags blocklevel \
+  --doctype omit \
+  --indent-spaces 2 \
+  --tidy-mark no \
+  -indent \
+  -modify \
+  -wrap 0 \
+  ./index.html
