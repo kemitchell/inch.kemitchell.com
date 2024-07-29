@@ -12,7 +12,7 @@ cat >index.html <<HTML
   </head>
   <body>
   <main>
-$(npx kemarkdown < table.md)
+$(./generate)
   </main>
   </body>
 </html>

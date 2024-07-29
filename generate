@@ -38,22 +38,28 @@ rows = records
        end
        .sort_by { |row| row[:mm] }
 
-print "|"
+puts '<table>'
+
+puts '<thead>'
+print '<tr>'
 fractions.each do |denominator|
-  print " /#{denominator} |"
+  print "<th>/#{denominator}</th>"
 end
-print ' Decimal |'
-print ' Millimeters |'
-puts
+puts '<th>Decimal</th>'
+puts '<th>Millimeters</th>'
+puts '</tr>'
+puts '</thead>'
 
-puts "|#{'-|' * (fractions.count + 2)}"
-
+puts '<tbody>'
 rows.each do |row|
-  print '| '
+  puts '<tr>'
   fractions.each do |denominator|
-    print " #{row[denominator]} |"
+    puts "<td>#{row[denominator]}</td>"
   end
-  print " #{row[:decimal]} |"
-  print " #{row[:mm]} |"
-  puts
+  puts "<td>#{row[:decimal]}</td>"
+  puts "<td>#{row[:mm]}</td>"
+  puts '</tr>'
 end
+puts '</tbody>'
+
+puts '</table>'
