@@ -9,6 +9,9 @@ table {
   td, th {
     padding: 0.5rem;
   }
+  td:target {
+    background: yellow;
+  }
   thead {
     border-bottom: 1px solid black;
     th {
