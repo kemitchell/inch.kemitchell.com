@@ -4,6 +4,13 @@ set -e
 cat >index.html <<HTML
 <!doctype html>
 <html lang=en-US>
+<!--
+Nerds:
+
+You can link to any particular fraction with #{x}/{y} or any whole millimeter with #{X}mm.  The corresponding row will be displayed with a highlighter-yellow background
+
+The scripts for generating this site are at: https://github.com/kemitchell/inch.kemitchell.com
+-->
   <head>
     <meta charset=UTF-8>
     <meta name=viewport content="width=device-width, initial-scale=1">
