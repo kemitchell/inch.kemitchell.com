@@ -10,7 +10,9 @@ table {
     padding: 0.5rem;
   }
   thead {
-    border-bottom: 1px solid black;
+    td, th {
+      border-bottom: 1px solid black;
+    }
     th {
       text-align: left;
       vertical-align: bottom;
