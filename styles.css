@@ -23,9 +23,7 @@ table {
     }
     @media print {
       tr {
-        td, th {
-          border-bottom: 1px solid #777;
-        }
+        border-bottom: 1px solid #777;
       }
     }
     @media screen {
