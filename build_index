@@ -7,7 +7,8 @@ cat >index.html <<HTML
 <!--
 Nerds:
 
-You can link to any particular fraction with #{x}/{y} or any whole millimeter with #{X}mm.  The corresponding row will be displayed with a highlighter-yellow background
+You can link to any particular fraction with #{x}/{y} or any whole millimeter with #{X}mm.
+The corresponding row will be displayed with a highlighter-yellow background.
 
 The scripts for generating this site are at: https://github.com/kemitchell/inch.kemitchell.com
 -->
