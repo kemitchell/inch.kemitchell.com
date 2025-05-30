@@ -28,7 +28,6 @@ HTML
 
 tidy \
   --custom-tags blocklevel \
-  --doctype omit \
   --indent-spaces 2 \
   --tidy-mark no \
   -indent \
