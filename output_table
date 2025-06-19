@@ -12,7 +12,7 @@ def ml_to_ounces(ml)
 end
 
 ml = [100, 250, 500, 750, 1000]
-ounces = [8, 16, 24]
+ounces = [2, 4, 8, 16, 24]
 
 ml.each do |ml|
   records << { ml: ml, ounces: ml_to_ounces(ml) }
