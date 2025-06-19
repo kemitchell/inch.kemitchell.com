@@ -23,6 +23,7 @@ ounces.each do |ounces|
 end
 
 records << { pints: 1, ounces: 16, ml: ounces_to_ml(16) }
+records << { pints: 2, ounces: 32, ml: ounces_to_ml(32) }
 
 rows = records
        .group_by { |x| x[:ml] }
