@@ -43,7 +43,7 @@ puts '<table>'
 
 puts '<thead>'
 puts '<tr>'
-puts '<th>Ounces</th>'
+puts '<th>US Ounces</th>'
 puts '<th>Pints</th>'
 puts '<th>Quarts</th>'
 puts '<th>Gallons</th>'
