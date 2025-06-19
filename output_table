@@ -42,20 +42,20 @@ puts '<table>'
 
 puts '<thead>'
 puts '<tr>'
-puts '<th>Milliliters</th>'
 puts '<th>Ounces</th>'
 puts '<th>Pints</th>'
 puts '<th>Quarts</th>'
+puts '<th>Milliliters</th>'
 puts '</tr>'
 puts '</thead>'
 
 puts '<tbody>'
 rows.each do |row|
   puts '<tr>'
-  puts "<td>#{row[:ml]}</td>"
   puts "<td>#{row[:ounces]}</td>"
   puts "<td>#{row[:pints]}</td>"
   puts "<td>#{row[:quarts]}</td>"
+  puts "<td>#{row[:ml]}</td>"
   puts '</tr>'
 end
 puts '</tbody>'
