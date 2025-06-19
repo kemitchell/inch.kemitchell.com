@@ -1,32 +1,29 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-fractions = [2, 4, 8, 16, 32, 64, 5, 10]
-
 records = []
 
-def inch_to_mm(inch)
-  inch * 25.4
+def ounces_to_ml(ounces)
+  ounces * 29.5735295625
 end
 
-fractions.each do |denominator|
-  (1..denominator).each do |numerator|
-    record = {}
-    record[denominator] = "#{numerator}/#{denominator}"
-    record[:decimal] = numerator.to_f / denominator
-    record[:mm] = inch_to_mm(numerator.to_f / denominator)
-    records << record
-  end
+def ml_to_ounces(ml)
+  ml / 29.5735295625
 end
 
-(1..25).each do |mm|
-  record = { mm: }
-  record[:decimal] = mm.to_f / 25.4
-  records << record
+ml = [100, 250, 500, 750, 1000]
+ounces = [8, 16, 24]
+
+ml.each do |ml|
+  records << { ml: ml, ounces: ml_to_ounces(ml) }
+end
+
+ounces.each do |ounces|
+  records << { ml: ounces_to_ml(ounces), ounces: ounces }
 end
 
 rows = records
-       .group_by { |x| x[:mm] }
+       .group_by { |x| x[:ml] }
        .map do |_, matching|
          row = {}
          matching.each do |record|
@@ -36,41 +33,22 @@ rows = records
          end
          row
        end
-       .sort_by { |row| row[:mm] }
+       .sort_by { |row| row[:ml] }
 
 puts '<table>'
 
 puts '<thead>'
 puts '<tr>'
-fractions.each do |denominator|
-  puts "<th>/#{denominator}</th>"
-end
-puts '<th>Decimal</th>'
-puts '<th>Millimeters</th>'
+puts '<th>Milliliters</th>'
+puts '<th>Ounces</th>'
 puts '</tr>'
 puts '</thead>'
 
 puts '<tbody>'
 rows.each do |row|
   puts '<tr>'
-  fractions.each do |denominator|
-    value = row[denominator]
-    if value.nil?
-      print '<td>'
-    else
-      print "<td id='#{value}'>"
-    end
-    print value
-    puts '</td>'
-  end
-  puts "<td>#{row[:decimal]}</td>"
-  mm = row[:mm]
-  if (mm % 1).zero?
-    print "<td id='#{mm}mm'>"
-  else
-    print '<td>'
-  end
-  puts "#{row[:mm]}</td>"
+  puts "<td>#{row[:ml]}</td>"
+  puts "<td>#{row[:ounces]}</td>"
   puts '</tr>'
 end
 puts '</tbody>'
