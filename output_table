@@ -22,6 +22,8 @@ ounces.each do |ounces|
   records << { ml: ounces_to_ml(ounces), ounces: ounces }
 end
 
+records << { pints: 1, ounces: 16, ml: ounces_to_ml(16) }
+
 rows = records
        .group_by { |x| x[:ml] }
        .map do |_, matching|
@@ -41,6 +43,7 @@ puts '<thead>'
 puts '<tr>'
 puts '<th>Milliliters</th>'
 puts '<th>Ounces</th>'
+puts '<th>Pints</th>'
 puts '</tr>'
 puts '</thead>'
 
@@ -49,6 +52,7 @@ rows.each do |row|
   puts '<tr>'
   puts "<td>#{row[:ml]}</td>"
   puts "<td>#{row[:ounces]}</td>"
+  puts "<td>#{row[:pints]}</td>"
   puts '</tr>'
 end
 puts '</tbody>'
