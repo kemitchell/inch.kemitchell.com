@@ -11,7 +11,7 @@ def ml_to_ounces(ml)
   ml / 29.5735295625
 end
 
-ml = [100, 250, 500, 750, 1000]
+ml = [100, 250, 500, 750, 1000, 1500]
 ounces = [2, 4, 8, 16, 24]
 
 ml.each do |ml|
@@ -24,6 +24,7 @@ end
 
 records << { pints: 1, ounces: 16, ml: ounces_to_ml(16) }
 records << { quarts: 1, pints: 2, ounces: 32, ml: ounces_to_ml(32) }
+records << { gallons: 1, quarts: 4, pints: 8, ounces: 128, ml: ounces_to_ml(128) }
 
 rows = records
        .group_by { |x| x[:ml] }
@@ -45,6 +46,7 @@ puts '<tr>'
 puts '<th>Ounces</th>'
 puts '<th>Pints</th>'
 puts '<th>Quarts</th>'
+puts '<th>Gallons</th>'
 puts '<th>Milliliters</th>'
 puts '</tr>'
 puts '</thead>'
@@ -55,6 +57,7 @@ rows.each do |row|
   puts "<td>#{row[:ounces]}</td>"
   puts "<td>#{row[:pints]}</td>"
   puts "<td>#{row[:quarts]}</td>"
+  puts "<td>#{row[:gallons]}</td>"
   puts "<td>#{row[:ml]}</td>"
   puts '</tr>'
 end
